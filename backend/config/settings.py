@@ -7,7 +7,7 @@ load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv("SECRET_KEY", "heartify-development-key")
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
-ALLOWED_HOSTS = [x.strip() for x in os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",") if x.strip()]
+ALLOWED_HOSTS = [x.strip() for x in os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost,online-learning-management-system-xbm8.onrender.com").split(",") if x.strip()]
 
 INSTALLED_APPS = [
     "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes",
@@ -67,7 +67,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     x.strip() for x in os.getenv(
         "CORS_ALLOWED_ORIGINS",
-        "http://127.0.0.1:5173,http://localhost:5173"
+        "http://127.0.0.1:5173,http://localhost:5173,https://online-learning-management-system-xbm8.onrender.com"
     ).split(",") if x.strip()
 ]
 
